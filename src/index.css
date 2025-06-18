@@ -1,0 +1,163 @@
+body {
+  font-family: 'Inter', sans-serif;
+
+
+}
+
+.logo{
+  width: 325px;
+  height: 65px;
+  margin-left: 15px;
+  flex-shrink: 0;
+  aspect-ratio: 5/1;
+} 
+
+.navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 117px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  padding-right: 75px;
+  margin: 0;  
+  gap: 47px;
+  text-decoration: none;
+  color: inherit;
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: inherit; 
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.2s;
+} 
+
+.nav-links a:hover{
+  color: #E41B13;
+} 
+
+/* Navbar ends */
+
+.first-page{
+  background: linear-gradient(180deg, #FFF 69.23%, #F12323 100%);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: space-around;
+  gap: 40px;
+  flex-direction: row;
+  background-color: image.png#ffffff;
+}
+
+.landing-photo{
+  height: 650px;
+  border-radius: 30px;
+}
+
+.first-page-text{
+  max-width: 800px;
+  word-break: break;
+}
+
+.padangu-servisas{
+  font-size: 60px;
+  color: rgb(0, 0, 0);
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal
+}
+
+.klaipeda{
+background: linear-gradient(90deg, #E41B13 0%, #7E0F0B 100%);
+background-clip: text;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-family: Inter;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+
+.skambinti{
+ height: 55px;
+ width: 259px;
+ color: white;
+ background: linear-gradient(90deg, #E41B13 0%, #7E0F0B 100%);
+ border-radius: 20px;
+ border: none;
+ font-size: 20px;
+ color: #FFF;
+font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+font-size: 30px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+transition: 0.2s;
+
+}
+
+.skambinti:hover{
+  scale: 1.05;
+}
+
+.turbut{
+  margin-top: -25px;
+  margin-bottom: 25px;
+  max-width: 500px;
+}
+
+/* baigiasi first page */
+
+.service-photo{
+  height: 500px;
+  border-radius: 20px;
+}
+
+.services{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  gap: 50px;
+
+}
+
+.viewport{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(0deg, #FFF 80.23%, #F12323 100%);;
+}
+
+.service-box{
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  text-align: center;
+}
+
+.text-box{
+  /* width: 100%;
+  max-width: 300px;
+  margin: 0;
+  text-align: center; */
+}
+
+.service-name{
+  font-size:40px;
+}

@@ -12,7 +12,12 @@ body {
   margin-left: 30px;
   flex-shrink: 0;
   aspect-ratio: 5/1;
+  transition: filter 0.3s ease;
 } 
+
+.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(228, 27, 19, 0.4));
+}
 
 .navbar-trigger {
   position: fixed;
@@ -154,12 +159,14 @@ font-size: 30px;
 font-style: normal;
 font-weight: 500;
 line-height: normal;
-transition: 0.2s;
+transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 
 }
 
 .skambinti:hover{
-  scale: 1.05;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(228, 27, 19, 0.2);
+  background: linear-gradient(90deg, #F12323 0%, #7E0F0B 100%);
 }
 
 .turbut{
@@ -208,18 +215,16 @@ transition: 0.2s;
   border-radius: 30px;
   background: #ffffff;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   height: fit-content;
   opacity: 0;
   transform: translateY(20px);
   visibility: hidden;
-  transition: all 0.6s ease-out;
-  will-change: opacity, visibility, transform;
 }
 
 .service-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .service-box:hover .service-photo {
@@ -313,12 +318,18 @@ transition: 0.2s;
   visibility: hidden;
   transition: all 0.6s ease-out;
   will-change: opacity, visibility, transform;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .contact-box.is-visible {
   opacity: 1;
   transform: translateY(0);
   visibility: visible;
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(228, 27, 19, 0.25);
 }
 
 .contact-info-group {
@@ -348,7 +359,7 @@ transition: 0.2s;
   font-size: 18px;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -356,8 +367,9 @@ transition: 0.2s;
 }
 
 .contact-button:hover {
-  background: rgba(255, 255, 255, 0.25);
   transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contact-button i {
@@ -451,6 +463,11 @@ transition: 0.2s;
 .footer-logo {
   width: 200px;
   height: auto;
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
 }
 
 .footer-info-section {
@@ -503,4 +520,83 @@ transition: 0.2s;
   .footer-logo-section {
     margin-bottom: 30px;
   }
+}
+
+/* Enhanced Hover Effects & Transitions */
+
+/* Logo hover effect */
+.logo {
+  width: 325px;
+  height: 65px;
+  margin-left: 30px;
+  flex-shrink: 0;
+  aspect-ratio: 5/1;
+  transition: filter 0.3s ease;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 8px rgba(228, 27, 19, 0.4));
+}
+
+/* Service cards hover effect */
+.service-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 0;
+  text-align: center;
+  padding: 20px;
+  border-radius: 30px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  height: fit-content;
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.service-box:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Button transitions */
+.skambinti, .contact-button {
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.skambinti:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(228, 27, 19, 0.2);
+  background: linear-gradient(90deg, #F12323 0%, #7E0F0B 100%);
+}
+
+.contact-button:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Contact box hover effect */
+.contact-box {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(228, 27, 19, 0.25);
+}
+
+/* Footer logo hover effect */
+.footer-logo {
+  transition: all 0.3s ease;
+}
+
+.footer-logo:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+}
+
+/* Add smooth transitions to all interactive elements */
+a, button, .service-photo {
+  transition: all 0.3s ease;
 }

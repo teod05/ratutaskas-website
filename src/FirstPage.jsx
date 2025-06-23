@@ -1,6 +1,6 @@
 function FirstPage(){
     return(
-        <div className="first-page">
+        <div id="home" className="first-page">
             <div className="first-page-text">
             <h1 className="padangu-servisas" >PADANGŲ SERVISAS 
             <span className="klaipeda"> KLAIPĖDOJE</span></h1>

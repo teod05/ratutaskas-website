@@ -2,33 +2,49 @@ import React, { useState, useEffect } from 'react';
 import logo from './assets/Ratų-taškas_logo-1.png';
 
 function Navbar() {
-    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
+    const [prevScrollPos, setPrevScrollPos] = useState(0);
+    const [scrollDirection, setScrollDirection] = useState('up');
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            const currentScrollPos = window.pageYOffset;
+            
+            // Determine scroll direction
+            const direction = prevScrollPos > currentScrollPos ? 'up' : 'down';
+            setScrollDirection(direction);
+            setPrevScrollPos(currentScrollPos);
+
+            // Show/hide navbar based on scroll direction and position
+            setIsVisible(direction === 'up' || currentScrollPos < 100);
+            setIsScrolled(currentScrollPos > 50);
+
+            // Determine active section
+            const sections = ['home', 'services', 'contact'];
+            for (const section of sections) {
+                const element = document.getElementById(section);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (rect.top <= 150 && rect.bottom >= 150) {
+                        setActiveSection(section);
+                        break;
+                    }
+                }
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const handleMouseEnter = () => {
-        setIsVisible(true);
-    };
-
-    const handleMouseLeave = () => {
-        setIsVisible(false);
-    };
+    }, [prevScrollPos]);
 
     const handleLinkClick = (e, targetId) => {
         e.preventDefault();
-        setIsVisible(false);
         
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-            const navbarHeight = 100; // Height of your navbar
+            const navbarHeight = 100;
             const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
             
             window.scrollTo({
@@ -39,23 +55,38 @@ function Navbar() {
     };
 
     return (
-        <>
-            <div 
-                className="navbar-trigger"
-                onMouseEnter={handleMouseEnter}
-            />
-            <nav 
-                className={`navbar ${isVisible ? 'visible' : ''} ${isScrolled ? 'scrolled' : ''}`}
-                onMouseLeave={handleMouseLeave}
-            >
-                <img src={logo} alt="Logo" className="logo" />
-                <ul className="nav-links">
-                    <li><a href="#home" onClick={(e) => handleLinkClick(e, 'home')}>Pagrindinis</a></li>
-                    <li><a href="#services" onClick={(e) => handleLinkClick(e, 'services')}>Paslaugos</a></li>
-                    <li><a href="#contact" onClick={(e) => handleLinkClick(e, 'contact')}>Kontaktai</a></li>
-                </ul>
-            </nav>
-        </>
+        <nav className={`navbar ${isVisible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''} ${scrollDirection === 'down' ? 'scrolling-down' : ''}`}>
+            <img src={logo} alt="Logo" className="logo" />
+            <ul className="nav-links">
+                <li>
+                    <a 
+                        href="#home" 
+                        onClick={(e) => handleLinkClick(e, 'home')}
+                        className={activeSection === 'home' ? 'active' : ''}
+                    >
+                        Pagrindinis
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href="#services" 
+                        onClick={(e) => handleLinkClick(e, 'services')}
+                        className={activeSection === 'services' ? 'active' : ''}
+                    >
+                        Paslaugos
+                    </a>
+                </li>
+                <li>
+                    <a 
+                        href="#contact" 
+                        onClick={(e) => handleLinkClick(e, 'contact')}
+                        className={activeSection === 'contact' ? 'active' : ''}
+                    >
+                        Kontaktai
+                    </a>
+                </li>
+            </ul>
+        </nav>
     );
 }
 

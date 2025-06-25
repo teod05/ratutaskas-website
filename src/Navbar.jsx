@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from './contexts/LanguageContext';
 import logo from './assets/Ratų-taškas_logo-1.png';
 
 function Navbar() {
     const [isVisible, setIsVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
-    const [activeSection, setActiveSection] = useState('home');
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [scrollDirection, setScrollDirection] = useState('up');
+    const [activeSection, setActiveSection] = useState('home');
+    const { t } = useTranslation('navbar');
+    const { language, toggleLanguage } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -57,35 +61,35 @@ function Navbar() {
     return (
         <nav className={`navbar ${isVisible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''} ${scrollDirection === 'down' ? 'scrolling-down' : ''}`}>
             <img src={logo} alt="Logo" className="logo" />
-            <ul className="nav-links">
-                <li>
-                    <a 
-                        href="#home" 
-                        onClick={(e) => handleLinkClick(e, 'home')}
-                        className={activeSection === 'home' ? 'active' : ''}
-                    >
-                        Pagrindinis
-                    </a>
-                </li>
-                <li>
-                    <a 
-                        href="#services" 
-                        onClick={(e) => handleLinkClick(e, 'services')}
-                        className={activeSection === 'services' ? 'active' : ''}
-                    >
-                        Paslaugos
-                    </a>
-                </li>
-                <li>
-                    <a 
-                        href="#contact" 
-                        onClick={(e) => handleLinkClick(e, 'contact')}
-                        className={activeSection === 'contact' ? 'active' : ''}
-                    >
-                        Kontaktai
-                    </a>
-                </li>
-            </ul>
+            <div className="nav-links">
+                <a 
+                    href="#home" 
+                    onClick={(e) => handleLinkClick(e, 'home')}
+                    className={activeSection === 'home' ? 'active' : ''}
+                >
+                    {t('home')}
+                </a>
+                <a 
+                    href="#services" 
+                    onClick={(e) => handleLinkClick(e, 'services')}
+                    className={activeSection === 'services' ? 'active' : ''}
+                >
+                    {t('services')}
+                </a>
+                <a 
+                    href="#contact" 
+                    onClick={(e) => handleLinkClick(e, 'contact')}
+                    className={activeSection === 'contact' ? 'active' : ''}
+                >
+                    {t('contacts')}
+                </a>
+                <button
+                    onClick={toggleLanguage}
+                    className="language-toggle"
+                >
+                    {language.toUpperCase()}
+                </button>
+            </div>
         </nav>
     );
 }

@@ -1345,3 +1345,40 @@ a, button, .service-photo {
     -webkit-text-fill-color: transparent;
     color: #E41B13; /* Fallback for browsers that don't support gradients */
 }
+
+.language-toggle {
+  padding: 8px 16px;
+  border: 2px solid #333333;
+  border-radius: 20px;
+  background: transparent;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 20px;
+}
+
+.language-toggle:hover {
+  background: #333333;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.scrolled .language-toggle {
+  border-color: #E41B13;
+  color: #E41B13;
+}
+
+.scrolled .language-toggle:hover {
+  background: #E41B13;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .language-toggle {
+    padding: 6px 12px;
+    font-size: 14px;
+    margin-left: 12px;
+  }
+}

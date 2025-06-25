@@ -1,0 +1,12 @@
+{
+    "title": "Susisiekite",
+    "titleEnd": "su mumis!",
+    "phone": "Skambinti",
+    "email": "El. paštas",
+    "map": "Žemėlapis",
+    "openMap": "Atidaryti žemėlapį",
+    "address": {
+        "line1": "Jūrininkų pr. 2, Klaipėda,",
+        "line2": "95264 Klaipėdos m. sav."
+    }
+} 

@@ -1,0 +1,17 @@
+{
+    "title": "Our",
+    "titleHighlight": "Services",
+    "subtitle": "Professional tire care services in Klaipėda",
+    "mounting": {
+        "title": "Tire Mounting",
+        "description": "Professional tire mounting and balancing. We ensure maximum stability on the road."
+    },
+    "repair": {
+        "title": "Tire Repair",
+        "description": "Fast and quality tire repair. We ensure your safety on the road."
+    },
+    "storage": {
+        "title": "Tire Storage",
+        "description": "Safe tire storage in our warehouse. Protection from damage and longer tire life."
+    }
+} 

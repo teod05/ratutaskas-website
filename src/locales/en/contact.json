@@ -1,0 +1,12 @@
+{
+    "title": "Contact",
+    "titleEnd": "Us!",
+    "phone": "Call",
+    "email": "Email",
+    "map": "Map",
+    "openMap": "Open Map",
+    "address": {
+        "line1": "Jūrininkų pr. 2, Klaipėda,",
+        "line2": "95264 Klaipėda city mun."
+    }
+} 

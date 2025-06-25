@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Navbar from './Navbar';
-import FirstPage from './FIrstPage';
+import FirstPage from './FirstPage';
 import Services from './Services';
 import Contact from './Contact';
 import Footer from './Footer'

@@ -11,8 +11,7 @@ function FirstPage() {
         <div id="home" className="first-page">
             <div className="first-page-text">
                 <h1 className="padangu-servisas animate-heading">
-                    {t('title')} 
-                    <span className="klaipeda"> {t('location')}</span>
+                    {t('title')} <span className="klaipeda">{t('location')}</span>
                 </h1>
                 <p className="turbut animate-subtext">{t('subtitle')}</p>
                 <button className="skambinti animate-button" onClick={handleCall}>

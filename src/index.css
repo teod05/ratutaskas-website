@@ -151,7 +151,7 @@ body {
 
 .padangu-servisas {
   font-family: Inter;
-  font-size: 64px;
+  font-size: 6vh;
   font-weight: 900;
   line-height: 1.1;
   margin: 0;
@@ -167,7 +167,6 @@ body {
 }
 
 .klaipeda::after {
-  content: "•";
   position: absolute;
   top: -15px;
   right: -15px;
@@ -226,9 +225,9 @@ body {
     padding: 100px 60px;
   }
 
-  .padangu-servisas {
+  /* .padangu-servisas {
     font-size: 56px;
-  }
+  } */
 
   .landing-photo {
     height: 450px;
@@ -244,9 +243,9 @@ body {
     padding: 80px 40px;
   }
 
-  .padangu-servisas {
+  /* .padangu-servisas {
     font-size: 48px;
-  }
+  } */
 
   .landing-photo {
     height: 400px;
@@ -265,7 +264,8 @@ body {
   }
 
   .padangu-servisas {
-    font-size: 40px;
+    margin-top: 60px;
+    font-size: 6vh;
     justify-content: center;
   }
 

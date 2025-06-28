@@ -1,5 +1,9 @@
 import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
+// Import images as modules
+import mountingImg from './assets/ChatGPT Image Jun 24, 2025, 08_07_56 PM.png';
+import repairImg from './assets/ChatGPT Image Jun 18, 2025, 01_42_07 PM.png';
+import storageImg from './assets/IMG_2626.JPG';
 
 function Services() {
     const { t } = useTranslation('services')
@@ -40,7 +44,7 @@ function Services() {
                     {/* Main Featured Service */}
                     <div className="service-main featured fade-in-section">
                         <div className="service-image">
-                            <img src="./src/assets/ChatGPT Image Jun 24, 2025, 08_07_56 PM.png" alt={t('mounting.title')} />
+                            <img src={mountingImg} alt={t('mounting.title')} />
                         </div>
                         <div className="service-content">
                             <h3>{t('mounting.title')}</h3>
@@ -53,7 +57,7 @@ function Services() {
                         {/* Padangų Remontas */}
                         <div className="service-main small fade-in-section delay-100">
                             <div className="service-image">
-                                <img src="./src/assets/ChatGPT Image Jun 18, 2025, 01_42_07 PM.png" alt={t('repair.title')} />
+                                <img src={repairImg} alt={t('repair.title')} />
                             </div>
                             <div className="service-content">
                                 <h3>{t('repair.title')}</h3>
@@ -64,7 +68,7 @@ function Services() {
                         {/* Padangų Saugojimas */}
                         <div className="service-main small fade-in-section delay-200">
                             <div className="service-image">
-                                <img src="./src/assets/IMG_2626.JPG" alt={t('storage.title')} />
+                                <img src={storageImg} alt={t('storage.title')} />
                             </div>
                             <div className="service-content">
                                 <h3>{t('storage.title')}</h3>

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import landingPhoto from './assets/IMG_2624.jpg';
 
 function FirstPage() {
     const { t } = useTranslation('hero');
@@ -18,7 +19,7 @@ function FirstPage() {
                     <i className="fas fa-phone"></i> {t('callButton')}
                 </button>
             </div>
-            <img className="landing-photo animate-image" src="./src/assets/IMG_2624.jpg" alt="a man holding a tire" />
+            <img className="landing-photo animate-image" src={landingPhoto} alt="a man holding a tire" />
         </div>
     );
 }

@@ -1,14 +1,16 @@
 body {
   font-family: 'Inter', sans-serif;
-  margin: 0%;
+  overflow-x: hidden;
+  margin: 0;
   background-color: linear-gradient(180deg, #FFF 69.23%, #F12323 100%);
-
-
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
 .logo{
-  width: 325px;
-  height: 65px;
+  width: auto;
+  height: 8vh;
   margin-left: 30px;
   flex-shrink: 0;
   aspect-ratio: 5/1;
@@ -24,6 +26,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
   z-index: 999;
   height: 100px;
   display: flex;
@@ -35,6 +38,7 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   transform: translateY(0);
+  box-sizing: border-box;
 }
 
 .navbar.hidden {
@@ -99,21 +103,31 @@ body {
   font-weight: 600;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .navbar {
     padding: 0 20px;
+    border-right: 40px;
   }
 
   .nav-links {
     padding-right: 0;
     gap: 20px;
+    width: 100%;
+    
   }
 
   .nav-links a {
     font-size: 14px;
     padding: 6px 12px;
+    width: 100%;
   }
-}
+
+  .logo {
+    width: auto;
+    max-height: 6vh;
+    margin-left: 0;
+  }
+} */
 
 /* Navbar ends */
 
@@ -540,6 +554,7 @@ body {
   .service-overlay {
     padding: 30px;
   }
+  
 
   .service-name {
     font-size: 24px;
@@ -869,14 +884,14 @@ body {
 /* Enhanced Hover Effects & Transitions */
 
 /* Logo hover effect */
-.logo {
+/* .logo {
   width: 325px;
   height: 65px;
   margin-left: 30px;
   flex-shrink: 0;
   aspect-ratio: 5/1;
   transition: filter 0.3s ease;
-}
+} */
 
 .logo:hover {
   filter: drop-shadow(0 0 8px rgba(228, 27, 19, 0.4));
@@ -1598,4 +1613,139 @@ a, button, .service-photo {
     padding: 10px 25px;
     font-size: 16px;
   }
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  margin-right: 45px;
+}
+.hamburger .bar {
+  width: 28px;
+  height: 4px;
+  background: #E41B13;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.hamburger.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    size: 100px;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    border-radius: 0 0 24px 24px;
+    box-sizing: border-box;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-20px);
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: 1000;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .nav-links.mobile-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+    padding: 24px 0 16px 0;
+  }
+  .nav-links a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 18px 0;
+    width: 100%;
+    text-align: center;
+    transition: background 0.2s;
+    border-radius: 0;
+    margin: 0;
+    color: #222;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .nav-links a:hover,
+  .nav-links a.active {
+    background: rgba(228, 27, 19, 0.08);
+    color: #E41B13;
+    text-decoration: none;
+  }
+  .nav-links .language-toggle {
+    display: block;
+    margin: 24px auto 0 auto;
+    border-radius: 24px;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #E41B13;
+    padding: 12px 36px;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(228,27,19,0.06);
+    box-sizing: border-box;
+    max-width: calc(100% - 48px);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .nav-links .language-toggle:hover {
+    background: #b3120e;
+    color: #fff;
+  }
+  .nav-links .language-toggle::before {
+    content: none;
+  }
+}
+
+/* Prevent body scroll when menu is open */
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Prevent horizontal overflow for main containers */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Ensure main page sections don't overflow */
+.first-page,
+.services,
+.contact-page,
+.footer-container {
+  max-width: 100%;
+  overflow-x: hidden;
 }

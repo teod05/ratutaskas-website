@@ -9,8 +9,18 @@ function Navbar() {
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [scrollDirection, setScrollDirection] = useState('up');
     const [activeSection, setActiveSection] = useState('home');
+    const [menuOpen, setMenuOpen] = useState(false);
     const { t } = useTranslation('navbar');
     const { language, toggleLanguage } = useLanguage();
+
+    useEffect(() => {
+        // Prevent body scroll when menu is open
+        if (menuOpen) {
+            document.body.classList.add('no-scroll');
+        } else {
+            document.body.classList.remove('no-scroll');
+        }
+    }, [menuOpen]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -37,6 +47,7 @@ function Navbar() {
                     }
                 }
             }
+            setMenuOpen(false); // Close menu on scroll
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -45,6 +56,7 @@ function Navbar() {
 
     const handleLinkClick = (e, targetId) => {
         e.preventDefault();
+        setMenuOpen(false);
         
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
@@ -61,7 +73,17 @@ function Navbar() {
     return (
         <nav className={`navbar ${isVisible ? 'visible' : 'hidden'} ${isScrolled ? 'scrolled' : ''} ${scrollDirection === 'down' ? 'scrolling-down' : ''}`}>
             <img src={logo} alt="Logo" className="logo" />
-            <div className="nav-links">
+            <button
+                className={`hamburger${menuOpen ? ' open' : ''}`}
+                aria-label="Toggle menu"
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen(!menuOpen)}
+            >
+                <span className="bar"></span>
+                <span className="bar"></span>
+                <span className="bar"></span>
+            </button>
+            <div className={`nav-links${menuOpen ? ' mobile-open' : ''}`}>
                 <a 
                     href="#home" 
                     onClick={(e) => handleLinkClick(e, 'home')}

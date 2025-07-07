@@ -1,5 +1,5 @@
 {
     "contacts": "Contacts",
     "address": "Address",
-    "rights": "© 2016 UAB RATU TASKAS. All rights reserved."
+    "rights": "© {{year}} UAB RATU TASKAS. All rights reserved."
 } 

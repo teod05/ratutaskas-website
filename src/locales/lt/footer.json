@@ -1,5 +1,5 @@
 {
     "contacts": "Kontaktai",
     "address": "Adresas",
-    "rights": "© {year} UAB RATU TASKAS. Visos teisės saugomos."
+    "rights": "© {{year}} UAB RATU TASKAS. Visos teisės saugomos."
 } 

@@ -1,17 +1,17 @@
 {
     "title": "Mūsų",
     "titleHighlight": "Paslaugos",
-    "subtitle": "Profesionalios padangų priežiūros paslaugos Klaipėdoje",
+    "subtitle": "Padangų priežiūros paslaugos Klaipėdoje",
     "mounting": {
         "title": "Padangų Montavimas",
         "description": "Profesionalus padangų montavimas ir balansavimas. Užtikriname maksimalų stabilumą kelyje."
     },
     "repair": {
         "title": "Padangų Remontas",
-        "description": "Greitas ir kokybiškas padangų taisymas. Užtikriname jūsų saugumą kelyje."
+        "description": "Greitas ir kokybiškas padangų taisymas. Mažų pradūrimų remontas, šoninių pažeidimų įvertinimas, sandarumo atstatymas, balansavimas po remonto."
     },
     "storage": {
         "title": "Padangų Saugojimas",
-        "description": "Saugus padangų saugojimas mūsų sandėlyje. Apsauga nuo žalos ir ilgesnis padangų tarnavimo laikas."
+        "description": "Padangų saugojimas mūsų sandėlyje. Apsauga nuo žalos ir ilgesnis padangų tarnavimo laikas."
     }
 } 

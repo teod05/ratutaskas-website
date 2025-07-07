@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const LanguageContext = createContext();
@@ -13,7 +13,14 @@ export const useLanguage = () => {
 
 export const LanguageProvider = ({ children }) => {
     const { i18n } = useTranslation();
-    const [currentLanguage, setCurrentLanguage] = useState(i18n.language || 'lt');
+    const [currentLanguage, setCurrentLanguage] = useState('lt');
+
+    // Force Lithuanian as default on first load
+    useEffect(() => {
+        if (i18n.language !== 'lt') {
+            i18n.changeLanguage('lt');
+        }
+    }, [i18n]);
 
     const toggleLanguage = useCallback(() => {
         const newLang = currentLanguage === 'lt' ? 'en' : 'lt';

@@ -149,14 +149,22 @@ body {
 .first-page-text {
   max-width: 600px;
   z-index: 1;
+  flex: 1 1 50%;
 }
 
 .landing-photo {
-  height: 550px;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 4/5;
+  height: auto;
   border-radius: 30px;
   object-fit: cover;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: block;
+  margin-right: 0;
+  flex: 1 1 50%;
+
 }
 
 .landing-photo:hover {
@@ -244,7 +252,7 @@ body {
   } */
 
   .landing-photo {
-    height: 450px;
+    max-width: 350px;
   }
 
   .turbut {
@@ -262,47 +270,47 @@ body {
   } */
 
   .landing-photo {
-    height: 400px;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .first-page {
     flex-direction: column;
-    padding: 60px 30px;
+    padding: 60px 10px;
     text-align: center;
   }
-
   .first-page-text {
     max-width: 100%;
   }
-
   .padangu-servisas {
-    margin-top: 60px;
-    font-size: 6vh;
+    margin-top: 100px;
+    font-size: 9vw;
     justify-content: center;
   }
-
+  .klaipeda {
+    font-size: 10vw;
+  }
   .klaipeda::after {
     top: -10px;
     right: -10px;
     font-size: 16px;
   }
-
   .turbut {
     font-size: 16px;
     margin: 20px auto 25px;
     text-align: center;
   }
-
   .landing-photo {
-    height: 350px;
+    max-width: 90vw;
+    aspect-ratio: 4/5;
+    width: 100%;
+    height: auto;
     margin-top: 40px;
   }
-
   .skambinti {
-    padding: 14px 32px;
-    font-size: 18px;
+    padding: 18px 40px;
+    font-size: 22px;
     margin: 0 auto;
   }
 }
@@ -311,21 +319,19 @@ body {
   .first-page {
     padding: 40px 20px;
   }
-
   .padangu-servisas {
-    font-size: 32px;
+    font-size: 11vw;
+    margin-top: 110px;
   }
-
+  .klaipeda {
+    font-size: 13vw;
+  }
   .landing-photo {
-    height: 300px;
-    width: 100%;
-    object-fit: cover;
+    max-width: 98vw;
   }
-
   .turbut {
-    font-size: 14px;
+    font-size: 4.5vw;
   }
-
   .skambinti {
     width: 100%;
     justify-content: center;

@@ -547,6 +547,7 @@ body {
 
   .services-secondary {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .featured {
@@ -1393,8 +1394,8 @@ a, button, .service-photo {
 /* Secondary Services */
 .services-secondary {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 }
 
 /* Responsive Design */
@@ -1443,7 +1444,7 @@ a, button, .service-photo {
 
     .services-secondary {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 24px;
     }
 
     .service-main .service-content {

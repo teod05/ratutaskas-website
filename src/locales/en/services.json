@@ -13,5 +13,9 @@
     "storage": {
         "title": "Tire Storage",
         "description": "Safe tire storage in our warehouse. Protection from damage and longer tire life."
+    },
+    "roadside": {
+        "title": "Roadside Assistance",
+        "description": "24/7 roadside assistance"
     }
 } 

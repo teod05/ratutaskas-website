@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import mountingImg from './assets/ChatGPT Image Jun 24, 2025, 08_07_56 PM.png';
 import repairImg from './assets/ChatGPT Image Jun 18, 2025, 01_42_07 PM.png';
 import storageImg from './assets/IMG_2626.JPG';
+import roadsideImg from './assets/ChatGPT Image Jul 7, 2025, 03_19_13 PM.png'; // Updated image for roadside
 
 function Services() {
     const { t } = useTranslation('services')
@@ -39,10 +40,9 @@ function Services() {
                     <h2>{t('title')} <span className="paslaugos">{t('titleHighlight')}</span></h2>
                     <p>{t('subtitle')}</p>
                 </div>
-                
-                <div className="services-layout">
-                    {/* Main Featured Service */}
-                    <div className="service-main featured fade-in-section">
+                <div className="services-secondary">
+                    {/* Padangų Montavimas */}
+                    <div className="service-main small fade-in-section delay-100">
                         <div className="service-image">
                             <img src={mountingImg} alt={t('mounting.title')} />
                         </div>
@@ -51,29 +51,34 @@ function Services() {
                             <p>{t('mounting.description')}</p>
                         </div>
                     </div>
-
-                    {/* Secondary Services */}
-                    <div className="services-secondary">
-                        {/* Padangų Remontas */}
-                        <div className="service-main small fade-in-section delay-100">
-                            <div className="service-image">
-                                <img src={repairImg} alt={t('repair.title')} />
-                            </div>
-                            <div className="service-content">
-                                <h3>{t('repair.title')}</h3>
-                                <p>{t('repair.description')}</p>
-                            </div>
+                    {/* Padangų Remontas */}
+                    <div className="service-main small fade-in-section delay-200">
+                        <div className="service-image">
+                            <img src={repairImg} alt={t('repair.title')} />
                         </div>
-
-                        {/* Padangų Saugojimas */}
-                        <div className="service-main small fade-in-section delay-200">
-                            <div className="service-image">
-                                <img src={storageImg} alt={t('storage.title')} />
-                            </div>
-                            <div className="service-content">
-                                <h3>{t('storage.title')}</h3>
-                                <p>{t('storage.description')}</p>
-                            </div>
+                        <div className="service-content">
+                            <h3>{t('repair.title')}</h3>
+                            <p>{t('repair.description')}</p>
+                        </div>
+                    </div>
+                    {/* Padangų Saugojimas */}
+                    <div className="service-main small fade-in-section delay-300">
+                        <div className="service-image">
+                            <img src={storageImg} alt={t('storage.title')} />
+                        </div>
+                        <div className="service-content">
+                            <h3>{t('storage.title')}</h3>
+                            <p>{t('storage.description')}</p>
+                        </div>
+                    </div>
+                    {/* Pagalba Kelyje */}
+                    <div className="service-main small fade-in-section delay-400">
+                        <div className="service-image">
+                            <img src={roadsideImg} alt={t('roadside.title')} />
+                        </div>
+                        <div className="service-content">
+                            <h3>{t('roadside.title')}</h3>
+                            <p>{t('roadside.description')}</p>
                         </div>
                     </div>
                 </div>

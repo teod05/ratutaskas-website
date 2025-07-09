@@ -13,5 +13,9 @@
     "storage": {
         "title": "Padangų Saugojimas",
         "description": "Padangų saugojimas mūsų sandėlyje. Apsauga nuo žalos ir ilgesnis padangų tarnavimo laikas."
+    },
+    "roadside": {
+        "title": "Pagalba Kelyje",
+        "description": "Operatyvi pagalba kelyje visą parą"
     }
 } 

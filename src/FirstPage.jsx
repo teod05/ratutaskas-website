@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import landingPhoto from './assets/IMG_2624.jpg';
+import BrandSlider from './BrandSlider';
 
 function FirstPage() {
     const { t } = useTranslation('hero');
@@ -9,18 +10,22 @@ function FirstPage() {
     };
 
     return (
-        <div id="home" className="first-page">
-            <div className="first-page-text">
-                <h1 className="padangu-servisas animate-heading">
-                    {t('title')} <span className="klaipeda">{t('location')}</span>
-                </h1>
-                <p className="turbut animate-subtext">{t('subtitle')}</p>
-                <button className="skambinti animate-button" onClick={handleCall}>
-                    <i className="fas fa-phone"></i> {t('callButton')}
-                </button>
+        <>
+            <div id="home" className="first-page">
+                <div className="first-page-text">
+                    <h1 className="padangu-servisas animate-heading">
+                        {t('title')} <span className="klaipeda">{t('location')}</span>
+                    </h1>
+                    <p className="turbut animate-subtext">{t('subtitle')}</p>
+                    <button className="skambinti animate-button" onClick={handleCall}>
+                        <i className="fas fa-phone"></i> {t('callButton')}
+                    </button>
+                </div>
+                <img className="landing-photo animate-image" src={landingPhoto} alt="a man holding a tire" />
             </div>
-            <img className="landing-photo animate-image" src={landingPhoto} alt="a man holding a tire" />
-        </div>
+            {/* Brand logos slider section - now full width under hero */}
+            <BrandSlider />
+        </>
     );
 }
 

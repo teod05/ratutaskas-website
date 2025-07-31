@@ -8,11 +8,13 @@ import firestoneLogo from './assets/Firestone-Logo.png';
 import bridgestoneLogo from './assets/Bridgestone-logo.jpg';
 import bfgoodrichLogo from './assets/BFGoodrich-logo-3840x2160.png';
 import photo2025Logo from './assets/photo_2025-07-25 12.37.54.jpeg';
+import otanilogo from './assets/cropped-Logo-แบบมีdriving-1.png';
 
 const sliderSettings = {
   spaceBetween: 30,
   slidesPerView: 2,
   loop: true,
+  speed: 3000,
   breakpoints: {
     640: { slidesPerView: 2 },
     768: { slidesPerView: 3 },
@@ -23,10 +25,13 @@ const sliderSettings = {
 const logos = [
   { src: michelinLogo, alt: 'Michelin Logo' },
   { src: hankookLogo, alt: 'Hankook Logo' },
+  { src: photo2025Logo, alt: 'Brand Logo' },
   { src: firestoneLogo, alt: 'Firestone Logo' },
   { src: bridgestoneLogo, alt: 'Bridgestone Logo' },
   { src: bfgoodrichLogo, alt: 'BFGoodrich Logo' },
-  { src: photo2025Logo, alt: 'Brand Logo' },
+  { src: otanilogo, alt: 'Otani Logo' },
+
+  
 ];
 
 const logoCardStyle = {
@@ -57,8 +62,9 @@ const BrandSlider = () => {
         {...sliderSettings}
         modules={[Autoplay]}
         autoplay={{
-          delay: 1500,
+          delay: 0,
           disableOnInteraction: false,
+          pauseOnMouseEnter: false,
         }}
         style={{ padding: '0 1rem' }}
       >
